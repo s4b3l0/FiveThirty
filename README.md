@@ -1,6 +1,7 @@
-#Bootstrap
- `npm install bootstrap --save` \
- Add import to Angular.json `~bootstrap/dist/css/bootstrap.css`
+# Bootstrap
+ - `npm install bootstrap --save` 
+ - Add import to Angular.json `node_modules/bootstrap/dist/css/bootstrap.css`
+ - Add import to Angular.json `npm i ngx-bootstrap`
 
 
 # Form Steps

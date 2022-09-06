@@ -1,0 +1,68 @@
+<accordion>
+  <accordion-group heading="Credential">
+    <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
+      <div class="container">
+        <div class="row">
+          <div class="col-12"><h4>Set Password</h4></div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-2"><label class="col-form-label">Username</label></div>
+          <div class="col-6"><input formControlName="username" class="form-text w-100"></div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-2"><label class="col-form-label">Email</label></div>
+          <div class="col-6"><input formControlName="email" type="email" class="form-text w-100"></div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-2"><label class="col-form-label">Password</label></div>
+          <div class="col-6"><input formControlName="password" type="form-control" class="form-text w-100"></div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-2"><label class="col-form-label">Password</label></div>
+          <div class="col-6"><input  formControlName="password2" type="form-control" class="form-text w-100"></div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-2">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+          <div class="col-2">
+            <button type="reset" class="btn btn-warning">Reset</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <table class="table">
+      <thead >
+          <th>Username</th>
+          <th>Email</th>
+          <th>Password</th>
+      </thead>
+      <tbody>
+          <tr *ngFor="let credential of credentialList">
+            <td>{{credential.username}}</td>
+            <td>{{credential.email}}</td>
+            <td>{{credential.password}}</td>
+          </tr>
+      </tbody>
+    </table>
+  </accordion-group>
+  <accordion-group heading="Finish Register">
+    <div class="container">
+      <div class="row">
+        <div class="col-12"><h4>Complete Application</h4></div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-2"><label class="col-form-label">Name</label></div>
+        <div class="col-6"><input class="form-text w-100"></div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-2"><label class="col-form-label">Surname</label></div>
+        <div class="col-6"><input class="form-text w-100"></div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-2"><label class="col-form-label">Gender</label></div>
+        <div class="col-6"><input class="form-text w-100"></div>
+      </div>
+    </div>
+  </accordion-group>
+</accordion>
