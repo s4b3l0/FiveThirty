@@ -6,6 +6,7 @@ import {TooltipModule} from "ngx-bootstrap/tooltip";
 import {AccordionModule} from "ngx-bootstrap/accordion";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ReactiveFormsModule} from "@angular/forms";
+import {UtilsModule} from "./utils/utils.module";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     BrowserAnimationsModule,
     TooltipModule.forRoot(),
     AccordionModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    UtilsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

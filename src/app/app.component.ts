@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, ɵElement} from "@angular/forms";
-import {Credential, CredentialForm} from "./model/credential";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {Credential} from "./model/credential";
+import {CustomValidationService} from "./utils/custom-validation.service";
 
 @Component({
   selector: 'app-root',
@@ -9,14 +10,22 @@ import {Credential, CredentialForm} from "./model/credential";
 })
 export class AppComponent implements OnInit {
   form: FormGroup = this.formBuilder.group({});
-  credentialList : Array<Credential> = [];
+  credentialList: Array<Credential> = [];
 
-  constructor(private formBuilder : FormBuilder) {
+  get controls() {
+    return this.form.controls;
+  }
+
+  constructor(private formBuilder: FormBuilder, private cvs: CustomValidationService) {
   }
 
   ngOnInit(): void {
     this.initializeForm();
     this.listenToFormChanges();
+  }
+
+  onSubmit(_meh: any) {
+    this.credentialList.push(this.form.value);
   }
 
   private listenToFormChanges() {
@@ -25,15 +34,10 @@ export class AppComponent implements OnInit {
 
   private initializeForm() {
     this.form = this.formBuilder.group({
-      username: this.formBuilder.control(''),
-      email: this.formBuilder.control(''),
-      password: this.formBuilder.control(''),
-      password2: this.formBuilder.control('')
-    })
-  }
-
-
-  onSubmit($event: any) {
-    this.credentialList.push(this.form.value);
+      username: this.formBuilder.control('', [Validators.required, Validators.minLength(3)]),
+      email: this.formBuilder.control('', [Validators.required, Validators.email]),
+      password: this.formBuilder.control('', Validators.required),
+      confirmPassword: this.formBuilder.control('', Validators.required)
+    }, {asyncValidators: this.cvs.passwordMatch().bind(this.form)})
   }
 }
