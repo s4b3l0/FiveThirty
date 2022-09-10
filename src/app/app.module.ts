@@ -7,10 +7,12 @@ import {AccordionModule} from "ngx-bootstrap/accordion";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ReactiveFormsModule} from "@angular/forms";
 import {UtilsModule} from "./utils/utils.module";
+import { CredentialComponent } from './credential/credential.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CredentialComponent
   ],
   imports: [
     BrowserModule,

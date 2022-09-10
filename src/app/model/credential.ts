@@ -5,5 +5,5 @@ export interface Credential {
 }
 
 export interface CredentialForm extends Credential {
-  password2?: string
+  confirmPassword?: string
 }

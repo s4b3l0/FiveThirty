@@ -1,5 +1,8 @@
 <accordion>
   <accordion-group heading="Credential">
+    <app-credential></app-credential>
+  </accordion-group>
+  <accordion-group heading="Old Credential">
     <form [formGroup]="form" #frm (ngSubmit)="onSubmit($event)">
       <div class="container">
         <div class="row">
@@ -69,3 +72,4 @@
     </div>
   </accordion-group>
 </accordion>
+
