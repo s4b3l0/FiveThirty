@@ -1,3 +1,4 @@
+//NOTE: Another way of doing this without needing to inject a service would be to just export this object as a constant
 export class ValidationErrorsService{
 
   account_validation_messages = {

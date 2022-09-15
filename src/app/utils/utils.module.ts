@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {CustomValidationService} from "./custom-validation.service";
+import {ValidationErrorsService} from "./validation-errors.service";
 
 @NgModule({
   declarations: [],
@@ -8,7 +9,8 @@ import {CustomValidationService} from "./custom-validation.service";
     CommonModule
   ],
   providers:[
-    CustomValidationService
+    CustomValidationService,
+    ValidationErrorsService
   ],
   exports: [
   ]
