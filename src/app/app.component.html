@@ -73,3 +73,33 @@
   </accordion-group>
 </accordion>
 
+<button class="form-control" (click)="setMode()"> Toggle Modes </button>
+
+
+<ng-template #test let-name>
+    <span class="bg-warning">Component: {{name}}</span>
+</ng-template>
+<!--<ng-template #dynamic>-->
+<!--  <ng-container  *ngTemplateOutlet="test; context: getContext(testValue)">-->
+<!--  </ng-container>-->
+<!--</ng-template>-->
+
+
+
+
+<div class="row" >
+  <input [(ngModel)]="testValue" *modeCheck="mode; else test; context: {$implicit: testValue}" class="form-control">
+</div>
+
+
+<div class="row"  >
+  <input [(ngModel)]="testValue2" *modeCheck="mode; else test; context: {$implicit: testValue2}" aria-describedby="descriptionHelp" class="form-control">
+</div>
+
+
+<ng-template #none><span >NO VALUE</span></ng-template>
+
+
+
+
+
